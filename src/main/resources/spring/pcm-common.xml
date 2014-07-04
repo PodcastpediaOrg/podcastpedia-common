@@ -47,7 +47,21 @@
    		<property name="jndiName" value="java:comp/env/mail/Session"/>
    </bean>          
    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-   		<property name="session" ref="smtpSession" />
+   	<property name="session" ref="smtpSession" />
+ 	<!--    
+	<property name="host" value="mail.podcastpedia.org" />
+	<property name="port" value="25" />
+	<property name="username" value="contact@podcastpedia.org" />
+	<property name="password" value="Contacting1983$" />
+ 
+
+	<property name="javaMailProperties">
+	   <props>
+       	      <prop key="mail.smtp.auth">true</prop>
+       	      <prop key="mail.smtp.starttls.enable">true</prop>
+       	   </props>
+	</property>
+	-->
    </bean>    
    <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
       <property name="velocityProperties">
