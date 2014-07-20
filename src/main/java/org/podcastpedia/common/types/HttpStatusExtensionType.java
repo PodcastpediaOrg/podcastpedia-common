@@ -45,15 +45,15 @@ public enum HttpStatusExtensionType {
 		return code;
 	}
 	
-	private static final Map<Integer,MediaType> lookup 
-    = new HashMap<Integer,MediaType>();
+	private static final Map<Integer,HttpStatusExtensionType> lookup 
+    = new HashMap<Integer,HttpStatusExtensionType>();
 
 	static {
-	    for(MediaType s : EnumSet.allOf(MediaType.class))
+	    for(HttpStatusExtensionType s : EnumSet.allOf(HttpStatusExtensionType.class))
 	         lookup.put(s.getCode(), s);
 	}	
 	
-    public static MediaType get(int code) { 
+    public static HttpStatusExtensionType get(int code) { 
         return lookup.get(code); 
    }
 }

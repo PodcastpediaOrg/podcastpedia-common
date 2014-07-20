@@ -8,7 +8,7 @@
 		<groupId>org.podcastpedia</groupId>
 		<artifactId>podcastpedia-parent</artifactId>
 		<relativePath>../podcastpedia-parent/pom.xml</relativePath>
-		<version>0.9.3</version>
+		<version>0.9.4-SNAPSHOT</version>
 	</parent>
 
 	<repositories>
@@ -18,6 +18,10 @@
 			<url>http://repo.springsource.org/release</url>
 		</repository>
 	</repositories>
+	
+	<properties>
+		<rometools.version>1.5.0</rometools.version>		
+	</properties>	
 	
 	<dependencies>
 
@@ -117,26 +121,37 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.27</version>
+			<version>5.1.32</version>
 		</dependency>
 
 		<!-- Project rome rss, atom -->
-		<dependency>
+<!-- 		<dependency>
 			<groupId>rome</groupId>
 			<artifactId>rome</artifactId>
 			<version>1.0</version>
-		</dependency>
+		</dependency> -->
 		<!-- option this fetcher thing -->
-		<dependency>
+<!-- 		<dependency>
 			<groupId>rome</groupId>
 			<artifactId>rome-fetcher</artifactId>
 			<version>1.0</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
+			<groupId>com.rometools</groupId>
+			<artifactId>rome</artifactId>
+			<version>1.5.0</version>
+		</dependency>		
+<!-- 		<dependency>
 			<groupId>org.jdom</groupId>
 			<artifactId>jdom</artifactId>
 			<version>1.1</version>
+		</dependency> -->
+		<dependency>
+			<groupId>org.jdom</groupId>
+			<artifactId>jdom2</artifactId>
+			<version>2.0.5</version>
 		</dependency>
+		
 
 		<!-- jsp and servlets stuff -->
 		<dependency>
