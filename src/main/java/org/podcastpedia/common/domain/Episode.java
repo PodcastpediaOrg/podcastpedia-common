@@ -3,14 +3,23 @@ package org.podcastpedia.common.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import org.podcastpedia.common.types.MediaType;
+import org.podcastpedia.common.xmladapters.DateAdapter;
 
-
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Episode implements Serializable{
 
 	/**
 	 * automatic generated serialVersionUID 
 	 */
+	@XmlTransient
 	private static final long serialVersionUID = -1957667986801174870L;
 
 	/** identifies the podcast the episode belongs to */
@@ -36,6 +45,7 @@ public class Episode implements Serializable{
 	private Podcast podcast;
 			
 	/** publication date of the episode */
+	@XmlJavaTypeAdapter(DateAdapter.class)
 	private Date publicationDate; 
 	
 	/** media type (either audio or video) */

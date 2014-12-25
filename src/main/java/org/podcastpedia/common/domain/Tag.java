@@ -1,9 +1,16 @@
 package org.podcastpedia.common.domain;
 
 import java.io.Serializable;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import net.sf.ehcache.pool.sizeof.annotations.IgnoreSizeOf;
 
 @IgnoreSizeOf
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Tag implements Serializable{
 	
 	private static final long serialVersionUID = -2370292880165225805L;

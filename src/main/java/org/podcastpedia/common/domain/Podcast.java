@@ -8,10 +8,14 @@ import java.util.List;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import org.podcastpedia.common.types.LanguageCode;
 import org.podcastpedia.common.types.MediaType;
 import org.podcastpedia.common.types.UpdateFrequencyType;
+import org.podcastpedia.common.xmladapters.DateAdapter;
 
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.FeedException;
@@ -25,8 +29,8 @@ import com.rometools.rome.io.XmlReader;
  * @author amasia
  *
  */
-@SuppressWarnings("restriction")
-@XmlRootElement(name="Podcast")
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Podcast implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -64,6 +68,7 @@ public class Podcast implements Serializable {
 	protected String tagsStr;
 	
 	/** feed of the podcast obtained with the Rome framework */
+	@XmlTransient 
 	protected SyndFeed podcastFeed; 
 	
 	/** media type of the podcast (either audio, video or videoHD) */ 
@@ -111,6 +116,7 @@ public class Podcast implements Serializable {
 	protected String copyright; 
 		
 	/** podcast publication date -  contains the date of the last published episode */
+	@XmlJavaTypeAdapter(DateAdapter.class)	
 	protected Date publicationDate;
 	
 	/** link of the podcast */
@@ -444,7 +450,6 @@ public class Podcast implements Serializable {
 	}
 	
 	//annotation used so that the podcastFeed field is not considered, as it's an interface and cannot by parsed by JAXB
-	@XmlTransient 
 	public SyndFeed getPodcastFeed() {
 		return podcastFeed;
 	}

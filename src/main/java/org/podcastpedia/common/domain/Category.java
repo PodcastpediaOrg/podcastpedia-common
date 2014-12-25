@@ -2,6 +2,9 @@ package org.podcastpedia.common.domain;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Category implements Serializable{
 
 	private static final long serialVersionUID = 219264453988823416L;

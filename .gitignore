@@ -4,3 +4,5 @@
 /.classpath
 /pom.xml.releaseBackup
 /release.properties
+/.idea
+/podcastpedia-common.iml
