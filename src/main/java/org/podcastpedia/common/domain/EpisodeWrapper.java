@@ -16,7 +16,7 @@ public class EpisodeWrapper implements Serializable{
 	private Episode episode;
 	
 	/** list with surrounding episodes (ordered by episode id) */
-	private List<Episode> surroundingEpisodes;
+	private List<Episode> lastEpisodes;
 
 	public Episode getEpisode() {
 		return episode;
@@ -26,12 +26,12 @@ public class EpisodeWrapper implements Serializable{
 		this.episode = episode;
 	}
 
-	public List<Episode> getSurroundingEpisodes() {
-		return surroundingEpisodes;
+	public List<Episode> getLastEpisodes() {
+		return lastEpisodes;
 	}
 
-	public void setSurroundingEpisodes(List<Episode> surroundingEpisodes) {
-		this.surroundingEpisodes = surroundingEpisodes;
+	public void setLastEpisodes(List<Episode> lastEpisodes) {
+		this.lastEpisodes = lastEpisodes;
 	}
 	
 }
